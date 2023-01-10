@@ -11,7 +11,7 @@ export const checkUserEmail = (req, res) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("mydb");
-        dbo.collection("customers").find(userEmail, { projection: { _id: 0,password: 0, status: 0 } }).toArray(function(err, result) {
+        dbo.collection("customers").find(userEmail, { projection: { _id: 0,password: 0, status: 0, date: 0 } }).toArray(function(err, result) {
           if (err) throw err
           let uEmail = (result);
           db.close();
@@ -93,7 +93,7 @@ export const getStatusByUser = (req, res) => {
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("mydb");
-      dbo.collection("customers").find(userEmailToGetStatus, { projection: { _id: 0, email: 0, password: 0 } }).toArray(function(err, result) {
+      dbo.collection("customers").find(userEmailToGetStatus, { projection: { _id: 0, email: 0, password: 0, date: 0 } }).toArray(function(err, result) {
         if (err) throw err;
         db.close();
         res.json(result);
@@ -114,7 +114,7 @@ export const loginUser = (req, res) => {
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("mydb");
-      dbo.collection("customers").find(userData, { projection: { _id: 0, email: 0, password: 0} }).toArray(function(err, result) {
+      dbo.collection("customers").find(userData, { projection: { _id: 0, email: 0, password: 0, date: 0} }).toArray(function(err, result) {
         if (err) throw err;
         db.close();
         
