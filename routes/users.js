@@ -1,5 +1,5 @@
 import  express  from "express";
-import {checkUserEmail, registUser, getStatusByUser,  deleteUserFromFB, getUsersFromDB, loginUser} from "../controllers/users.js";
+import {checkUserEmail, registUser, getStatusByUser,  deleteUserFromFB, getUsersFromDB, loginUser, connectionAttempt} from "../controllers/users.js";
 
 const router = express.Router();
 
@@ -9,8 +9,12 @@ router.get('/get/status/:email', getStatusByUser);
 
 router.get('/get/:email', checkUserEmail);
 
-router.delete('/delete/:email' , deleteUserFromFB);
-router.get('/', getUsersFromDB);
 router.post('/login', loginUser)
+
+router.post('/attempt', connectionAttempt)
+
+//router.delete('/delete/:email' , deleteUserFromFB);
+//router.get('/', getUsersFromDB);
+
 
 export default router;

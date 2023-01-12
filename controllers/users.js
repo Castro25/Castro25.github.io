@@ -28,6 +28,12 @@ export const checkUserEmail = (req, res) => {
       });
 }
 
+
+export const connectionAttempt = (req, res) => {
+  res.status(OK)
+}
+
+
 export const registUser = (req, res) => {
   const userData = req.body;
   const MongoClient = mongodb.MongoClient;
