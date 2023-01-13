@@ -30,7 +30,7 @@ export const checkUserEmail = (req, res) => {
 
 
 export const connectionAttempt = (req, res) => {
-  res.status(OK)
+  res.send(200)
 }
 
 
