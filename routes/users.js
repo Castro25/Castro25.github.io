@@ -9,9 +9,9 @@ router.get('/get/status/:email', getStatusByUser);
 
 router.get('/get/:email', checkUserEmail);
 
-router.post('/login', loginUser)
+router.post('/login', loginUser);
 
-router.post('/attempt', connectionAttempt)
+router.get('/attempt', connectionAttempt);
 
 //router.delete('/delete/:email' , deleteUserFromFB);
 //router.get('/', getUsersFromDB);

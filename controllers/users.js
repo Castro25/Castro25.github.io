@@ -31,7 +31,7 @@ export const checkUserEmail = (req, res) => {
 
 export const connectionAttempt = (req, res) => {
   req.close
-  res.send(200)
+  res.sendStatus(200)
 }
 
 
